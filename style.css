@@ -1,0 +1,37 @@
+body{
+  background-color: #121212;
+}
+
+#content{
+  display: flex;
+  flex-direction: row;
+}
+
+#allWords{
+  display: flex;
+  flex-flow: row wrap;
+  width: 50%;
+}
+
+#sentenceSection{
+  display: flex;
+  flex-direction: column;
+}
+
+.popo{
+  padding: 5px 15px 5px 15px;
+  margin: 5px;
+  background-color: #ffd441;
+  color: #111;
+}
+
+.word{
+  padding: 5px 15px 5px 15px;
+  margin: 5px;
+  background-color: #FFFFFF;
+}
+
+.clicked{
+  /* display: none; */
+  color: red;
+}
