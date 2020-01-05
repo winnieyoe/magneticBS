@@ -1,21 +1,52 @@
+h1{
+  color: #FFF;
+  font-size: 24px;
+  margin: 3% 0 0 5%;
+}
+
 body{
   background-color: #121212;
+}
+
+div::-webkit-scrollbar {
+  width: 8px;
+}
+
+div::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+div::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 #content{
   display: flex;
   flex-direction: row;
+  align-items: baseline;
 }
 
 #allWords{
   display: flex;
   flex-flow: row wrap;
-  width: 50%;
+  margin: 5%;
+  padding: 0px 20px 0px 0px;
+  width: 45%;
+  max-height: 600px;
+  overflow-y: scroll;
 }
 
 #sentenceSection{
-  display: flex;
-  flex-direction: column;
+  width: 55%;
+  margin: 5%;
+}
+
+#button{
+  margin-top: 5%;
 }
 
 .popo{

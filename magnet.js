@@ -1,4 +1,4 @@
-//LEFT SIDE: Make the list of words into an array, print it on the screen
+//WORDLIST: Make the list of words into an array, print it on the screen
 let words = [];
 let eachWord;
 
@@ -32,7 +32,7 @@ let shuffle = function (words) {
   return words;
 };
 
-//RIGHT SIDE: Sentence
+//MAKE SENTENCE
 let popo = ["Hong", "Kong", "Police"]
 
 $.each(popo, function(index, item){
