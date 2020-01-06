@@ -11,6 +11,19 @@ $.get('words.txt', function(data) {
     eachWord = "<span class='word' id='word" + i + "'>" + words[i] + "<span>"
     $("#allWords").append(eachWord);
   }
+
+  //Add CSS to rotate each magnet by a random degree
+  $(".word").each(function(){
+    var rNum = (Math.random()*10)-6;
+      var x = (Math.random()*10)-5;
+      var y = (Math.random()*10)-5;
+    $(this).css({
+      '-webkit-transform': 'rotate('+rNum+'2deg)',
+      '-moz-transform': 'rotate('+rNum+'2deg)',
+        'top': x,
+        'left': y
+    });
+  })
 });
 
 //Shuffle the order of the words in each reload

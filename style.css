@@ -1,11 +1,15 @@
 h1{
   color: #FFF;
   font-size: 24px;
-  margin: 3% 0 0 5%;
+  margin: 3% 0% 5% 5%;
 }
 
 body{
   background-color: #121212;
+}
+
+p{
+  color: #FFF;
 }
 
 div::-webkit-scrollbar {
@@ -17,7 +21,7 @@ div::-webkit-scrollbar-track {
 }
 
 div::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #ffd441;
 }
 
 div::-webkit-scrollbar-thumb:hover {
@@ -30,11 +34,15 @@ div::-webkit-scrollbar-thumb:hover {
   align-items: baseline;
 }
 
+#instruction{
+  margin: 3% 0% 0% 0%;
+}
+
 #allWords{
   display: flex;
   flex-flow: row wrap;
-  margin: 5%;
   padding: 0px 20px 0px 0px;
+  margin: 2% 5% 0% 0%;
   width: 45%;
   height: 600px;
   overflow-y: scroll;
@@ -42,7 +50,7 @@ div::-webkit-scrollbar-thumb:hover {
 
 #sentenceSection{
   width: 55%;
-  margin: 5%;
+  margin: auto 5%;
   /* overflow: auto; */
 }
 
@@ -57,7 +65,7 @@ div::-webkit-scrollbar-thumb:hover {
 
 .popo{
   padding: 5px 15px 5px 15px;
-  margin: 5px;
+  margin: 5px 10px 0px 0px;
   background-color: #ffd441;
   color: #111;
 }
@@ -70,5 +78,5 @@ div::-webkit-scrollbar-thumb:hover {
 
 .clicked{
   /* display: none; */
-  color: red;
+  /* color: red; */
 }
