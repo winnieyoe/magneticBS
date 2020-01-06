@@ -36,13 +36,19 @@ div::-webkit-scrollbar-thumb:hover {
   margin: 5%;
   padding: 0px 20px 0px 0px;
   width: 45%;
-  max-height: 600px;
+  height: 600px;
   overflow-y: scroll;
 }
 
 #sentenceSection{
   width: 55%;
   margin: 5%;
+  /* overflow: auto; */
+}
+
+#sentence{
+  display: flex;
+  flex-flow: row wrap;
 }
 
 #button{
