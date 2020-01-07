@@ -17,7 +17,7 @@ div::-webkit-scrollbar {
 }
 
 div::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #282828;
 }
 
 div::-webkit-scrollbar-thumb {
@@ -43,13 +43,14 @@ div::-webkit-scrollbar-thumb:hover {
   flex-flow: row wrap;
   padding: 0px 20px 0px 0px;
   margin: 2% 5% 0% 0%;
-  width: 45%;
+  width: 48%;
   height: 600px;
   overflow-y: scroll;
+  justify-content: center;
 }
 
 #sentenceSection{
-  width: 55%;
+  width: 52%;
   margin: auto 5%;
   /* overflow: auto; */
 }
@@ -72,7 +73,7 @@ div::-webkit-scrollbar-thumb:hover {
 
 .word{
   padding: 5px 15px 5px 15px;
-  margin: 5px;
+  margin: 8px 6px;
   background-color: #FFFFFF;
 }
 

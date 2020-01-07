@@ -1,4 +1,3 @@
-is
 lives
 petrol
 possession
@@ -12,13 +11,10 @@ situation
 criminal
 one
 says
-comes
 allows
 incident
 protester
-acts
 needs
-means
 metal
 point
 weekend
@@ -52,7 +48,6 @@ means
 ruins
 scene
 resources
-a
 lies
 fights
 turns
@@ -64,22 +59,18 @@ claims
 trips
 appeal
 hospital
-the
 gas
 feels
 opens
 includes
 plainclothes
-to
 way
 room
 police
 question
 lampposts
-for
 talk
 brakes
-public
 crime
 emergency
 from
@@ -88,7 +79,6 @@ burns
 breaks
 helmets
 injunction
-of
 bus
 comes
 officer
@@ -167,7 +157,6 @@ legal
 violent
 express
 action
-such
 black
 matter
 basic
@@ -218,7 +207,6 @@ makes
 area
 bomb
 serious
-depends
 responsible
 baton
 last
@@ -230,7 +218,6 @@ local
 stay
 danger
 justice
-different
 maximum
 line
 tear
@@ -256,7 +243,6 @@ woman
 public
 illegal
 important
-use
 huge
 clarify
 large
@@ -306,8 +292,6 @@ various
 particular
 subject
 national
-public
-violent
 difficult
 human
 multiple
@@ -362,7 +346,6 @@ initial
 suspect
 liable
 extreme
-unlawful
 rational
 lethal
 proper
@@ -371,7 +354,6 @@ actual
 future
 similar
 a
-an
 about
 the
 after
@@ -411,9 +393,3 @@ as
 across
 amid
 around
-after
-from
-a
-an
-the
-is
