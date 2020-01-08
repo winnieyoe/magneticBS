@@ -1,14 +1,14 @@
 //FIREBASE
 var firebaseConfig = {
-    apiKey: "AIzaSyC6NcP8kFHNB2SuBKkXV980-uufg2rdI14",
-    authDomain: "magneticbs-hk.firebaseapp.com",
-    databaseURL: "https://magneticbs-hk.firebaseio.com",
-    projectId: "magneticbs-hk",
-    storageBucket: "magneticbs-hk.appspot.com",
-    messagingSenderId: "1051793330330",
-    appId: "1:1051793330330:web:9474d3dcc03a78868b0f23",
-    measurementId: "G-EDVW101NCL"
-  };
+  apiKey: "AIzaSyC6NcP8kFHNB2SuBKkXV980-uufg2rdI14",
+  authDomain: "magneticbs-hk.firebaseapp.com",
+  databaseURL: "https://magneticbs-hk.firebaseio.com",
+  projectId: "magneticbs-hk",
+  storageBucket: "magneticbs-hk.appspot.com",
+  messagingSenderId: "1051793330330",
+  appId: "1:1051793330330:web:9474d3dcc03a78868b0f23",
+  measurementId: "G-EDVW101NCL"
+};
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
@@ -31,39 +31,60 @@ $.get('words-noDup.txt', function(data) {
   words = shuffle(words); //shuffle the order of words in array
 
   // console.log("length", words.length)
-  for (let i=0; i < words.length; i++){
-    eachWord = "<span class='word' id='word" + i + "'>" + words[i] + "<span>"
+  for (let i = 0; i < words.length; i++) {
+    eachWord = "<span class='word' id='word" + i + "'>" + words[i] + "</span>"
     $("#allWords").append(eachWord);
   }
 
+  //Rotate each magnet by a random degree
+  $(".word").each(rotate);
   //Find duplicates
   // find_dup(words);
   // console.log(find_dup(words));
 
-  //Rotate each magnet by a random degree
-  $(".word").each(rotate);
+  //METHOD SECTION
+  let n = 7;
+  let sampleWords = words.slice(0, n);
+  for (let i = 0; i < sampleWords.length; i++) {
+    sampleWord = "<span class='sample'>" + sampleWords[i] + "</span>"
+    $("#sample").append(sampleWord);
+
+    // $.each(sampleWords, function(index, item) {
+    //   $(this).delay(500*(index+1)).fadeIn(1000);
+    //   $(".s").each(rotate);
+    // })
+  }
+ //Sample words fade in one by one
+  $('.sample').each(function(i) {
+    $(this).delay(200*(i+1)).fadeIn(100);
+    $(".sample").each(rotate);
+});
+
+
+
+  // console.log(sampleWords)
 });
 
 function find_dup(arra1) {
-        var object = {};
-        var result = [];
+  var object = {};
+  var result = [];
 
-        arra1.forEach(function (item) {
-          if(!object[item])
-              object[item] = 0;
-            object[item] += 1;
-        })
+  arra1.forEach(function(item) {
+    if (!object[item])
+      object[item] = 0;
+    object[item] += 1;
+  })
 
-        for (var prop in object) {
-           if(object[prop] >= 2) {
-               result.push(prop);
-           }
-        }
-        return result;
+  for (var prop in object) {
+    if (object[prop] >= 2) {
+      result.push(prop);
+    }
+  }
+  return result;
 }
 
 //Shuffle the order of the words in each reload
-let shuffle = function (words) {
+let shuffle = function(words) {
   let currentIndex = words.length;
   let temporaryValue, randomIndex;
 
@@ -84,8 +105,8 @@ let shuffle = function (words) {
 //MAKE SENTENCE
 let popo = ["Hong", "Kong", "Police"]
 
-$.each(popo, function(index, item){
-  $("#sentence").append("<span class='popo'>" + item + " " + "<span>");
+$.each(popo, function(index, item) {
+  $("#sentence").append("<span class='popo'>" + item + "</span>");
 
   //Rotate popo
   $(".popo").each(rotate);
@@ -93,15 +114,15 @@ $.each(popo, function(index, item){
 
 //Rotate function
 
-function rotate(){
-  var rNum = (Math.random()*10)-6;
-    var x = (Math.random()*10)-5;
-    var y = (Math.random()*10)-5;
+function rotate() {
+  var rNum = (Math.random() * 10) - 6;
+  var x = (Math.random() * 10) - 5;
+  var y = (Math.random() * 10) - 5;
   $(this).css({
-    '-webkit-transform': 'rotate('+rNum+'2deg)',
-    '-moz-transform': 'rotate('+rNum+'2deg)',
-      'top': x,
-      'left': y,
+    '-webkit-transform': 'rotate(' + rNum + '2deg)',
+    '-moz-transform': 'rotate(' + rNum + '2deg)',
+    'top': x,
+    'left': y,
   });
 }
 
@@ -109,10 +130,9 @@ function rotate(){
 // let clicked = false;
 let selectedWords = [];
 
-$(document).ready(function(){
-  $("span").click(
-    function(){
-      if ($(this).hasClass("clicked") == false){
+$(document).ready(function() {
+  $("span").on("click",function() {
+      if ($(this).hasClass("clicked") == false) {
         $(this).addClass("clicked");
         thisWord = $(this).text();
         $(this).appendTo("#sentence");
@@ -127,12 +147,29 @@ $(document).ready(function(){
       }
     }
   )
+  // $("span").click(
+  //   function() {
+  //     if ($(this).hasClass("clicked") == false) {
+  //       $(this).addClass("clicked");
+  //       thisWord = $(this).text();
+  //       $(this).appendTo("#sentence");
+  //       // console.log(this.id, thisWord)
+  //       // clicked = true;
+  //     } else {
+  //       $(this).removeClass("clicked");
+  //       $(this).appendTo("#allWords");
+  //       thisWord = $(this).text;
+  //       // selectedWords.pop(thisWord);
+  //       // clicked = false;
+  //     }
+  //   }
+  // )
   //Submit sentence
-  $("#submit").on("click", function(){
-     let all = document.querySelectorAll(".clicked");
-      for(let i=0; i<all.length; i++){
-        selectedWords.push(all[i].textContent);
-      }
+  $("#submit").on("click", function() {
+    let all = document.querySelectorAll(".clicked");
+    for (let i = 0; i < all.length; i++) {
+      selectedWords.push(all[i].textContent);
+    }
     // console.log("selected", selectedWords);
     userData.sentence = selectedWords;
     result.push(selectedWords);

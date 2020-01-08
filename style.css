@@ -1,14 +1,22 @@
 h1{
   color: #FFF;
-  font-size: 24px;
-  margin: 3% 0% 5% 5%;
+  font-size: 22px;
+  margin: 2% 0% 0% 0%;
+  text-align: center;
+}
+
+h2{
+  color: #FFF;
 }
 
 body{
   background-color: #121212;
+  width: 92%;
+  margin: auto;
 }
 
 p{
+  font-size: 18px;
   color: #FFF;
 }
 
@@ -19,25 +27,84 @@ p{
 
 /* Part 1: intro */
 #intro{
-  margin: 10% 0% 5% 5%;
+  margin: 2% 0% 10% 0%;
+  position: relative;
+  /* display: flex;
+  flex-direction: row; */
+}
+
+#vid:before {
+  content:"";
+  position: absolute;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  z-index:1;
+  background:linear-gradient(to right,rgba(10, 10, 10, 0),rgba(10, 10, 10, 0.7) 50%);
+}
+
+#vid{
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  overflow: hidden;
+  /* position: absolute; */
+  z-index: -1;
+}
+
+#video{
+  width: 100%;
+}
+
+#text1{
+  z-index: 999;
+  position: absolute;
+  top: 100px;
+  width: 30%;
+  margin-left: 65%;
+  margin-top: 10%;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+#introText{
+  margin-top:0;
+  line-height: 2;
+}
+
+/* Part 2: method */
+#method{
+  margin: 3% 5% 10% 5%;
   display: flex;
   flex-direction: row;
 }
 
-#video{
-  width: 90%;
+#sample{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
-#text{
-  width: 30%;
+#text2{
+  width:60%;
 }
-/* Part 2: method */
+
+.sample{
+  display: none;
+  font-size: 22px;
+  padding: 5px 15px 5px 15px;
+  margin: 20px 20px 0px 0px;
+  background-color: #FFFFFF;
+}
 
 /* Part 3: create */
 #create{
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  margin: 3% 5% 15% 5%;
 }
 
 #instruction{
@@ -48,7 +115,7 @@ p{
   display: flex;
   flex-flow: row wrap;
   padding: 0px 20px 0px 0px;
-  margin: 2% 5% 0% 0%;
+  margin: 2% 0% 0% 0%;
   width: 48%;
   height: 600px;
   overflow-y: scroll;
@@ -56,8 +123,8 @@ p{
 }
 
 #sentenceSection{
-  width: 52%;
-  margin: auto 5%;
+  width: 55%;
+  margin: auto 4% auto 0%;
   /* overflow: auto; */
 }
 
@@ -82,6 +149,9 @@ p{
   padding: 5px 15px 5px 15px;
   margin: 16px 12px 0px 0px;
   background-color: #FFFFFF;
+  /* border: 1px solid #AAAAAA; */
+  /* border-bottom: 1px solid #222222;
+  border-right: 1px solid #222222; */
 }
 
 .clicked{
