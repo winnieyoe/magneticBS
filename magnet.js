@@ -41,17 +41,7 @@ $.get('words-noDup.txt', function(data) {
   // console.log(find_dup(words));
 
   //Rotate each magnet by a random degree
-  $(".word").each(function(){
-    var rNum = (Math.random()*10)-6;
-      var x = (Math.random()*10)-5;
-      var y = (Math.random()*10)-5;
-    $(this).css({
-      '-webkit-transform': 'rotate('+rNum+'2deg)',
-      '-moz-transform': 'rotate('+rNum+'2deg)',
-        'top': x,
-        'left': y,
-    });
-  });
+  $(".word").each(rotate);
 });
 
 function find_dup(arra1) {
@@ -96,7 +86,24 @@ let popo = ["Hong", "Kong", "Police"]
 
 $.each(popo, function(index, item){
   $("#sentence").append("<span class='popo'>" + item + " " + "<span>");
+
+  //Rotate popo
+  $(".popo").each(rotate);
 })
+
+//Rotate function
+
+function rotate(){
+  var rNum = (Math.random()*10)-6;
+    var x = (Math.random()*10)-5;
+    var y = (Math.random()*10)-5;
+  $(this).css({
+    '-webkit-transform': 'rotate('+rNum+'2deg)',
+    '-moz-transform': 'rotate('+rNum+'2deg)',
+      'top': x,
+      'left': y,
+  });
+}
 
 //Find out which word on left is selected, append to the right side if so
 // let clicked = false;

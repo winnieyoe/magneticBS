@@ -12,23 +12,29 @@ p{
   color: #FFF;
 }
 
-div::-webkit-scrollbar {
-  width: 8px;
+#sections{
+  display: flex;
+  flex-direction: column;
 }
 
-div::-webkit-scrollbar-track {
-  background: #282828;
+/* Part 1: intro */
+#intro{
+  margin: 10% 0% 5% 5%;
+  display: flex;
+  flex-direction: row;
 }
 
-div::-webkit-scrollbar-thumb {
-  background: #ffd441;
+#video{
+  width: 90%;
 }
 
-div::-webkit-scrollbar-thumb:hover {
-  background: #555;
+#text{
+  width: 30%;
 }
+/* Part 2: method */
 
-#content{
+/* Part 3: create */
+#create{
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -65,19 +71,53 @@ div::-webkit-scrollbar-thumb:hover {
 }
 
 .popo{
+  font-size: 20px;
   padding: 5px 15px 5px 15px;
-  margin: 5px 10px 0px 0px;
+  margin: 5px 10px 5px 0px;
   background-color: #ffd441;
   color: #111;
 }
 
 .word{
   padding: 5px 15px 5px 15px;
-  margin: 8px 6px;
+  margin: 16px 12px 0px 0px;
   background-color: #FFFFFF;
 }
 
 .clicked{
+  font-size: 20px;
+  margin: 5px 10px 5px 0px;
   /* display: none; */
   /* color: red; */
+}
+
+button, input[type="submit"] {
+  /* border: 1px solid #FFF; */
+  border: none;
+  color: #FFF;
+  background-color: #282828;
+  padding: 14px 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+div::-webkit-scrollbar {
+  width: 8px;
+}
+
+div::-webkit-scrollbar-track {
+  background: #282828;
+}
+
+div::-webkit-scrollbar-thumb {
+  background: #ffd441;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
