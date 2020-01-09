@@ -131,24 +131,7 @@ function rotate() {
 let selectedWords = [];
 
 $(document).ready(function() {
-  $("span").on("click",function() {
-      if ($(this).hasClass("clicked") == false) {
-        $(this).addClass("clicked");
-        thisWord = $(this).text();
-        $(this).appendTo("#sentence");
-        // console.log(this.id, thisWord)
-        // clicked = true;
-      } else {
-        $(this).removeClass("clicked");
-        $(this).appendTo("#allWords");
-        thisWord = $(this).text;
-        // selectedWords.pop(thisWord);
-        // clicked = false;
-      }
-    }
-  )
-  // $("span").click(
-  //   function() {
+  // $("span").on("click",function() {
   //     if ($(this).hasClass("clicked") == false) {
   //       $(this).addClass("clicked");
   //       thisWord = $(this).text();
@@ -164,6 +147,23 @@ $(document).ready(function() {
   //     }
   //   }
   // )
+  $("span").click(
+    function() {
+      if ($(this).hasClass("clicked") == false) {
+        $(this).addClass("clicked");
+        thisWord = $(this).text();
+        $(this).appendTo("#sentence");
+        console.log(this.id, thisWord)
+        // clicked = true;
+      } else {
+        $(this).removeClass("clicked");
+        $(this).appendTo("#allWords");
+        thisWord = $(this).text;
+        // selectedWords.pop(thisWord);
+        // clicked = false;
+      }
+    }
+  )
   //Submit sentence
   $("#submit").on("click", function() {
     let all = document.querySelectorAll(".clicked");

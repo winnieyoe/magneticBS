@@ -1,22 +1,47 @@
+@font-face {font-family: "GT America Extended Black";
+  src: url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.eot"); /* IE9*/
+  src: url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.woff2") format("woff2"), /* chrome、firefox */
+  url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.woff") format("woff"), /* chrome、firefox */
+  url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.svg#GT America Extended Black") format("svg"); /* iOS 4.1- */
+}
+
+/* @font-face {
+    font-family: 'TiemposText';
+    src: url('TiemposText.eot');
+    src: url('TiemposText.eot?#iefix') format('embedded-opentype'),
+        url('TiemposText.woff2') format('woff2'),
+        url('TiemposText.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+
 h1{
-  color: #FFF;
-  font-size: 22px;
+  font-family: 'GT America Extended Black';
+  font-weight: 900;
+  color: #ffd441;
+  font-size: 20px;
   margin: 2% 0% 0% 0%;
   text-align: center;
 }
 
 h2{
+  /* font-family: 'GT America Extended'; */
+  font-size: 45px;
   color: #FFF;
 }
 
 body{
   background-color: #121212;
+  font-size: 16px;
   width: 92%;
   margin: auto;
 }
 
 p{
-  font-size: 18px;
+  /* font-family: 'TiemposText'; */
+  font-size: 16px;
   color: #FFF;
 }
 
@@ -27,7 +52,8 @@ p{
 
 /* Part 1: intro */
 #intro{
-  margin: 2% 0% 10% 0%;
+  margin: 2% 0% 5% 0%;
+  display: inline-flex;
   position: relative;
   /* display: flex;
   flex-direction: row; */
@@ -61,12 +87,14 @@ p{
   z-index: 999;
   position: absolute;
   top: 100px;
-  width: 30%;
-  margin-left: 65%;
-  margin-top: 10%;
-  /* display: flex;
+  width: 40%;
+  /* text-align: left; */
+  margin-left: 55%;
+  display: flex;
+  margin-top: 5%;
   align-items: center;
-  justify-content: center; */
+  flex-direction: column;
+  justify-content: center;
 }
 
 #introText{
