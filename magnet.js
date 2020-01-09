@@ -175,6 +175,23 @@ $(document).ready(function() {
       }
     }
   )
+
+  $(".word").on("mousedown touchstart",function() {
+      if ($(this).hasClass("clicked") == false) {
+        $(this).addClass("clicked");
+        thisWord = $(this).text();
+        $(this).appendTo("#sentence");
+        // console.log(this.id, thisWord)
+        // clicked = true;
+      } else {
+        $(this).removeClass("clicked");
+        $(this).appendTo("#allWords");
+        thisWord = $(this).text;
+        // selectedWords.pop(thisWord);
+        // clicked = false;
+      }
+    }
+  )
   // $(".word").click(
   //   function() {
   //     if ($(this).hasClass("clicked") == false) {
