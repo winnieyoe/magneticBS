@@ -14,11 +14,39 @@ firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
 // console.log(firebase);
 
+//Firebase Authentication
+firebase.auth().signInAnonymously().catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+});
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+  } else {
+    // User is signed out.
+  }
+});
+
+
 var database = firebase.database();
 var result = database.ref("result");
 var userData = {
   "sentence": "",
 };
+
+//BUTTON to go to create sentence section
+let startB = document.getElementById("arrow");
+let introDiv = document.getElementById("topDiv");
+let createDiv = document.getElementById("createDiv");
+
+// startB.addEventListener("click", function() {
+//   introDiv.style.display = "none";
+//   createDiv.style.display = "block";
+// })
 
 
 //WORDLIST: Make the list of words into an array, print it on the screen
@@ -43,7 +71,7 @@ $.get('words-noDup.txt', function(data) {
   // console.log(find_dup(words));
 
   //METHOD SECTION
-  let n = 7;
+  let n = 11;
   let sampleWords = words.slice(0, n);
   for (let i = 0; i < sampleWords.length; i++) {
     sampleWord = "<span class='sample'>" + sampleWords[i] + "</span>"

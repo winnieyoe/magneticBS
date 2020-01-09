@@ -1,11 +1,11 @@
-@font-face {font-family: "GT America Extended Black";
-  src: url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.eot"); /* IE9*/
-  src: url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.woff2") format("woff2"), /* chrome、firefox */
-  url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.woff") format("woff"), /* chrome、firefox */
-  url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.svg#GT America Extended Black") format("svg"); /* iOS 4.1- */
-}
+/* @font-face {font-family: "GT America Extended Black";
+  src: url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.eot");
+  src: url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.eot?#iefix") format("embedded-opentype"),
+  url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.woff2") format("woff2"),
+  url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.woff") format("woff"),
+  url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.ttf") format("truetype"),
+  url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.svg#GT America Extended Black") format("svg");
+} */
 
 /* @font-face {
     font-family: 'TiemposText';
@@ -17,31 +17,43 @@
     font-style: normal;
 } */
 
-h1{
-  font-family: 'GT America Extended Black';
-  font-weight: 900;
-  color: #ffd441;
-  font-size: 20px;
-  margin: 2% 0% 0% 0%;
-  text-align: center;
-}
-
-h2{
-  /* font-family: 'GT America Extended'; */
-  font-size: 45px;
-  color: #FFF;
-}
-
 body{
   background-color: #121212;
   font-size: 16px;
   width: 92%;
   margin: auto;
+  -webkit-font-smoothing: antialiased;
+  /* font-family: 'Gentium Basic', serif;
+  font-weight: 400; */
+}
+
+h1{
+  /* font-family: 'GT America Extended Black'; */
+  font-family: 'Archivo Black', sans-serif;
+  color: #ffd441;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  margin: 1% 0% 0% 0%;
+  text-align: center;
+}
+
+h2{
+  /* font-family: 'GT America Extended'; */
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 40px;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  color: #FFF;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 10px;
 }
 
 p{
   /* font-family: 'TiemposText'; */
-  font-size: 16px;
+  font-family: 'Neuton', serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.02em;
   color: #FFF;
 }
 
@@ -51,7 +63,12 @@ p{
 }
 
 /* Part 1: intro */
-#intro{
+#topDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+#introDiv{
   margin: 2% 0% 5% 0%;
   display: inline-flex;
   position: relative;
@@ -59,7 +76,7 @@ p{
   flex-direction: row; */
 }
 
-#vid:before {
+#vidDiv:before {
   content:"";
   position: absolute;
   top:0;
@@ -67,10 +84,10 @@ p{
   left:0;
   bottom:0;
   z-index:1;
-  background:linear-gradient(to right,rgba(10, 10, 10, 0),rgba(10, 10, 10, 0.7) 50%);
+  background:linear-gradient(to left,rgba(10, 10, 10, 0),rgba(10, 10, 10, 0.7) 50%);
 }
 
-#vid{
+#vidDiv{
   left: 0%;
   top: 0%;
   width: 100%;
@@ -89,54 +106,93 @@ p{
   top: 100px;
   width: 40%;
   /* text-align: left; */
-  margin-left: 55%;
+  margin-left: 5%;
   display: flex;
-  margin-top: 5%;
+  margin-top: 10%;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 }
 
 #introText{
-  margin-top:0;
-  line-height: 2;
+  line-height: 1.8;
 }
 
 /* Part 2: method */
-#method{
-  margin: 3% 5% 10% 5%;
+#methodDiv{
+  margin: 0% 0% 5% 5%;
   display: flex;
   flex-direction: row;
+  /* justify-content: space-between; */
+}
+
+#text2{
+  margin-right: 5%;
+  line-height: 1.8;
+}
+
+#sampleDiv{
+  width: 100%;
 }
 
 #sample{
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-}
-
-#text2{
-  width:60%;
+  margin: 20% 0% 0% 0%;
 }
 
 .sample{
   display: none;
   font-size: 22px;
   padding: 5px 15px 5px 15px;
-  margin: 20px 20px 0px 0px;
+  margin: 20px 0px 0px 20px;
   background-color: #FFFFFF;
 }
 
+#arrow{
+  width: 6%;
+  margin: 0 auto 5% auto;
+}
+
+#begin{
+  margin: 0 auto;
+}
+
+#beginButton{
+  border: none;
+  background-color: inherit;
+  color: #ffd441;
+  padding: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: inline-block;
+}
+
 /* Part 3: create */
-#create{
+#createDivWrapper{
+  /* display: none; */
+}
+
+#createDiv{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: baseline;
-  margin: 3% 5% 15% 5%;
+  margin: 8% 5% 15% 5%;
+}
+
+#create{
+  display:flex;
+  flex-direction: column;
 }
 
 #instruction{
-  margin: 3% 0% 0% 0%;
+  margin: 3% 0% 10% 0%;
+}
+
+#allWordsDiv{
+  width: 48%;
 }
 
 #allWords{
@@ -144,7 +200,6 @@ p{
   flex-flow: row wrap;
   padding: 0px 20px 0px 0px;
   margin: 2% 0% 0% 0%;
-  width: 48%;
   height: 600px;
   overflow-y: scroll;
   justify-content: center;
@@ -218,4 +273,10 @@ div::-webkit-scrollbar-thumb {
 
 div::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* ----------- Bigger phones ----------- */
+@media only screen
+  and (min-width: 360px){
+
 }
