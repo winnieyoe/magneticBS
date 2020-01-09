@@ -159,29 +159,12 @@ function rotate() {
 let selectedWords = [];
 
 $(document).ready(function() {
-  // $("span").on("click",function() {
-  //     if ($(this).hasClass("clicked") == false) {
-  //       $(this).addClass("clicked");
-  //       thisWord = $(this).text();
-  //       $(this).appendTo("#sentence");
-  //       // console.log(this.id, thisWord)
-  //       // clicked = true;
-  //     } else {
-  //       $(this).removeClass("clicked");
-  //       $(this).appendTo("#allWords");
-  //       thisWord = $(this).text;
-  //       // selectedWords.pop(thisWord);
-  //       // clicked = false;
-  //     }
-  //   }
-  // )
-  $("span").click(
-    function() {
+  $(".word").on("click",function() {
       if ($(this).hasClass("clicked") == false) {
         $(this).addClass("clicked");
         thisWord = $(this).text();
         $(this).appendTo("#sentence");
-        console.log(this.id, thisWord)
+        // console.log(this.id, thisWord)
         // clicked = true;
       } else {
         $(this).removeClass("clicked");
@@ -192,8 +175,36 @@ $(document).ready(function() {
       }
     }
   )
+  // $(".word").click(
+  //   function() {
+  //     if ($(this).hasClass("clicked") == false) {
+  //       $(this).addClass("clicked");
+  //       thisWord = $(this).text();
+  //       $(this).appendTo("#sentence");
+  //       console.log(this.id, thisWord)
+  //       // clicked = true;
+  //     } else {
+  //       $(this).removeClass("clicked");
+  //       $(this).appendTo("#allWords");
+  //       thisWord = $(this).text;
+  //       // selectedWords.pop(thisWord);
+  //       // clicked = false;
+  //     }
+  //   }
+  // )
   //Submit sentence
   $("#submit").on("click", function() {
+    let all = document.querySelectorAll(".clicked");
+    for (let i = 0; i < all.length; i++) {
+      selectedWords.push(all[i].textContent);
+    }
+    // console.log("selected", selectedWords);
+    userData.sentence = selectedWords;
+    result.push(selectedWords);
+  });
+
+  //Submit Sentence mobile
+  $("#submit-mobile").on("click", function() {
     let all = document.querySelectorAll(".clicked");
     for (let i = 0; i < all.length; i++) {
       selectedWords.push(all[i].textContent);

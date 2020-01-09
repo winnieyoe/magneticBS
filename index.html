@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Gentium+Basic|Neuton:300,400&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" charset="utf-8"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <tile>Magnetic Bullshit: Hong Kong Police Edition</title>
 </head>
 
 <body>
@@ -27,7 +26,7 @@
           <h2>Confronting Counternarratives</h2>
           <p id="introText">
             Since August 8, 2019, the Hong Kong Police Force has been conducting daily press-briefings at 4pm
-            to address events pertaining to the Anti-Extradition Amendment Bill protest. <br>
+            to address events pertaining to the Anti-Extradition Amendment Bill protest.
             <i>Magnetic Bullshit</i> stems out of the interest in using computational approaches
             to address my mental and emotional inability to process pro-establishment narratives.
           </p>
@@ -35,12 +34,15 @@
       </div>
 
       <div id="methodDiv">
-        <div id="text2">
+        <div id="methodHead-mobile">
           <h2>Methodology</h2>
+        </div>
+        <div id="text2">
+          <h2 id="methodHead">Methodology</h2>
           <p id="methodText">
             I scraped the auto captions from 120+ Hong Kong police press conference videos, which were uploaded on YouTube by Chinse state-owned English language
             news channels with an English simultaneous interpretation, to generated a 627-page transcript.
-            The most frequently used 300+ words are then used as source text for the magnets.
+            The most frequently used 300+ words are then used as the source text.
             <br><br>
             The visual format is a reference to the popular fridge poetry kit <i>Magnetic Poetry</i>.
             You can create your interpretation of the police’s narrative, reveal your version of truth,
@@ -66,15 +68,16 @@
       <div id="createDiv">
         <div id="create">
           <div id="instruction">
-            <h2>Create Sentence</h2>
-            <p>Click or drag word to make your sentence. To deselect, click on the word again.</p>
+            <h2>Create a Sentence</h2>
+            <p>Click or tap on the word magnets to create your sentence.
+              To deselect, click or tap on the word again.</p>
           </div>
           <div id="sentenceSection">
             <div id="sentence">
             </div>
-            <div id="button">
-              <button class="button" id="submit" type="submit">Submit Sentence</button>
-            </div>
+          </div>
+          <div id="button">
+            <button class="button" id="submit" type="submit">I'm done!</button>
           </div>
         </div>
 
@@ -82,9 +85,17 @@
           <div id="allWords">
           </div>
         </div>
-      </div>
-    </div>
 
+        <div id="button-mobile">
+          <button class="button" id="submit-mobile" type="submit">I'm done!</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="creditDiv">
+    <h1 id="credit">Created by <a href="https://www.winnieyoe.com/" target="_blank">Winnie Yoe</a> <span id="grey">(Part of an on-going research project)</span></h1>
   </div>
 </body>
 
