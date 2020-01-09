@@ -484,13 +484,25 @@ a:hover{
     }
 
     #allWords{
+      width: 100%;
+      font-size: 20px;
       display: flex;
       flex-flow: row wrap;
-      padding: 0px 20px 0px 0px;
-      margin: 2% 0% 0% 0%;
+      padding: 20px 20px 0px 0px;
+      margin: 2% 10% 2% 0%;
       height: 200px;
       overflow-y: scroll;
       justify-content: center;
+    }
+
+    .word{
+      padding: 5px 15px 5px 15px;
+      margin: 10px 10px 10px 8px;
+      background-color: #FFFFFF;
+      cursor: pointer;
+      /* border: 1px solid #AAAAAA; */
+      /* border-bottom: 1px solid #222222;
+      border-right: 1px solid #222222; */
     }
 
     #button{
