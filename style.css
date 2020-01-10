@@ -67,6 +67,7 @@ p {
 #topDiv {
   display: flex;
   flex-direction: column;
+  margin-bottom: 5%;
 }
 
 #introDiv {
@@ -177,7 +178,7 @@ p {
 
 /* Part 3: create */
 #createDivWrapper {
-  /* display: none; */
+  display: none;
 }
 
 #createDiv {
@@ -185,7 +186,7 @@ p {
   flex-direction: row;
   /* justify-content: space-between; */
   /* align-items: baseline; */
-  margin: 8% 5% 10% 5%;
+  margin: 8% 5% 5% 5%;
 }
 
 #create {
@@ -299,6 +300,7 @@ div::-webkit-scrollbar-thumb:hover {
 
 #creditDiv {
   margin-bottom: 3%;
+  display: none;
 }
 
 .credit {

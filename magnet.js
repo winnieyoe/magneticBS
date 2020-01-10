@@ -42,12 +42,16 @@ var userData = {
 //BUTTON to go to create sentence section
 let startB = document.getElementById("arrow");
 let introDiv = document.getElementById("topDiv");
-let createDiv = document.getElementById("createDiv");
+let createDiv = document.getElementById("createDivWrapper");
+let creditDiv = document.getElementById("creditDiv");
 
-// startB.addEventListener("click", function() {
-//   introDiv.style.display = "none";
-//   createDiv.style.display = "block";
-// })
+startB.addEventListener("click", function() {
+  introDiv.style.display = "none";
+  createDivWrapper.style.display = "block";
+  creditDiv.style.display = "block";
+  $('html, body').scrollTop($('#createDivWrapper').offset().top);
+  return false
+})
 
 
 //WORDLIST: Make the list of words into an array, print it on the screen
