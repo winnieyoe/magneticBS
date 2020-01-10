@@ -50,47 +50,81 @@ let createDiv = document.getElementById("createDiv");
 
 
 //WORDLIST: Make the list of words into an array, print it on the screen
-let words = [];
+// let words = [];
 let eachWord;
 
-$.get('words-noDup.txt', function(data) {
-  words = data.split("\n");
-  words = words.filter(item => item); //remove empty element in array
-  words = shuffle(words); //shuffle the order of words in array
+// $.get('words-noDup.txt', function(data) {
+//   words = data.split("\n");
+//   words = words.filter(item => item); //remove empty element in array
+//   words = shuffle(words); //shuffle the order of words in array
+//
+//   console.log(words);
+//   // console.log("length", words.length)
+//   for (let i = 0; i < words.length; i++) {
+//     eachWord = "<span class='word' id='word" + i + "'>" + words[i] + "</span>"
+//     $("#allWords").append(eachWord);
+//   }
+//
+//   //Rotate each magnet by a random degree
+//   $(".word").each(rotate);
+//   //Find duplicates
+//   // find_dup(words);
+//   // console.log(find_dup(words));
+//
+//   //METHOD SECTION
+//   let n = 11;
+//   let sampleWords = words.slice(0, n);
+//   for (let i = 0; i < sampleWords.length; i++) {
+//     sampleWord = "<span class='sample'>" + sampleWords[i] + "</span>"
+//     $("#sample").append(sampleWord);
+//
+//     // $.each(sampleWords, function(index, item) {
+//     //   $(this).delay(500*(index+1)).fadeIn(1000);
+//     //   $(".s").each(rotate);
+//     // })
+//   }
+//  //Sample words fade in one by one
+//   $('.sample').each(function(i) {
+//     $(this).delay(200*(i+1)).fadeIn(100);
+//     $(".sample").each(rotate);
+// });
+//   // console.log(sampleWords)
+// });
 
-  // console.log("length", words.length)
-  for (let i = 0; i < words.length; i++) {
-    eachWord = "<span class='word' id='word" + i + "'>" + words[i] + "</span>"
-    $("#allWords").append(eachWord);
-  }
+//Word using array in js
+let words = "lives,petrol,possession,top,shows,arrest,condemns,has,rises,situation,criminal,one,says,allows,incident,protester,needs,metal,point,weekend,man,goes,trains,sounds,search,happens,call,takes,targets,gives,hand,stakeholders,guns,seems,reports,appears,press,operation,does,sorts,prints,works,need,depends,is,gets,means,ruins,scene,resources,lies,fights,turns,place,commits,an,duty,claims,trips,appeal,hospital,gas,feels,opens,includes,plainclothes,way,room,police,question,lampposts,talk,brakes,crime,emergency,from,ages,burns,breaks,helmets,injunction,bus,comes,officer,figures,demonstration,use,case,regards,station,officers,international,rows,work,falls,person,airport,information,runs,wants,bones,force,attack,conference,new,acts,outfits,time,report,enforcement,tell,ends,exists,make,thank,approaches,site,law,serves,some,hope,investigation,gun,life,total,safety,laser,deployments,day,asks,affects,carries,night,irresponsible,fire,part,looks,number,court,organizer,protect,safe,video,mean,whole,recent,traffic,able,rounds,free,Music,relevant,fact,old,small,legal,violent,express,action,black,matter,basic,decision,road,kind,entire,other,major,evidence,fake,same,brief,letter,security,objection,center,back,involves,sorry,purpose,machines,aged,deal,damage,short,personal,something,true,open,making,requires,violence,reporter,male,like,district,second,radical,government,home,unit,cause,apart,young,professional,makes,area,bomb,serious,responsible,baton,last,weapon,online,dangerous,treatment,local,stay,danger,justice,maximum,line,tear,object,female,medical,respect,own,good,event,certain,peaceful,everyone,few,such,charge,reason,freedom,necessary,risk,main,woman,public,illegal,important,huge,clarify,large,conduct,training,level,many,protest,injury,further,ordinance,face,stress,family,school,measures,concerned,high,great,threat,social,rearms,example,false,group,choice,internet,possible,acceptable,rest,street,front,batches,innocent,detention,next,ground,clear,relation,control,unlawful,fair,later,close,prevent,various,particular,subject,national,difficult,human,multiple,reasonable,round,empty,procession,bodily,Chinese,appropriate,closed,common,assessment,individual,sufficient,premises,simple,internal,assault,corrosive,strict,society,passes,happy,caused,perfect,orderly,disorderly,political,specific,central,anyone,respond,several,riotous,chaotic,normal,lawful,yellow,ordinary,ongoing,different,available,organized,effective,previous,sexual,present,physical,morning,initial,suspect,liable,extreme,rational,lethal,proper,deadly,actual,future,similar,a,about,the,after,to,against,for,before,are,behind,of,below,at,during,but,regarding,by,since,into,through,on,towards,off,within,out,until,over,under,with,except,upon,excluding,than,besides,in,between,as,across,amid,around"
 
-  //Rotate each magnet by a random degree
-  $(".word").each(rotate);
-  //Find duplicates
-  // find_dup(words);
-  // console.log(find_dup(words));
+words = words.split(",");
+words = words.filter(item => item); //remove empty element in array
+words = shuffle(words); //shuffle the order of words in array
+// console.log("length", words.length)
+for (let i = 0; i < words.length; i++) {
+  eachWord = "<span class='word' id='word" + i + "'>" + words[i] + "</span>"
+  $("#allWords").append(eachWord);
+}
 
-  //METHOD SECTION
-  let n = 11;
-  let sampleWords = words.slice(0, n);
-  for (let i = 0; i < sampleWords.length; i++) {
-    sampleWord = "<span class='sample'>" + sampleWords[i] + "</span>"
-    $("#sample").append(sampleWord);
+//Rotate each magnet by a random degree
+$(".word").each(rotate);
+//Find duplicates
+// find_dup(words);
+// console.log(find_dup(words));
 
-    // $.each(sampleWords, function(index, item) {
-    //   $(this).delay(500*(index+1)).fadeIn(1000);
-    //   $(".s").each(rotate);
-    // })
-  }
- //Sample words fade in one by one
-  $('.sample').each(function(i) {
-    $(this).delay(200*(i+1)).fadeIn(100);
-    $(".sample").each(rotate);
-});
+//METHOD SECTION
+let n = 11;
+let sampleWords = words.slice(0, n);
+for (let i = 0; i < sampleWords.length; i++) {
+  sampleWord = "<span class='sample'>" + sampleWords[i] + "</span>"
+  $("#sample").append(sampleWord);
 
-
-
-  // console.log(sampleWords)
+  // $.each(sampleWords, function(index, item) {
+  //   $(this).delay(500*(index+1)).fadeIn(1000);
+  //   $(".s").each(rotate);
+  // })
+}
+//Sample words fade in one by one
+$('.sample').each(function(i) {
+  $(this).delay(200*(i+1)).fadeIn(100);
+  $(".sample").each(rotate);
 });
 
 function find_dup(arra1) {
@@ -112,7 +146,7 @@ function find_dup(arra1) {
 }
 
 //Shuffle the order of the words in each reload
-let shuffle = function(words) {
+function shuffle(words) {
   let currentIndex = words.length;
   let temporaryValue, randomIndex;
 
@@ -129,6 +163,23 @@ let shuffle = function(words) {
   }
   return words;
 };
+// let shuffle = function(words) {
+//   let currentIndex = words.length;
+//   let temporaryValue, randomIndex;
+//
+//   // While there remain elements to shuffle...
+//   while (0 !== currentIndex) {
+//     // Pick a remaining element...
+//     randomIndex = Math.floor(Math.random() * currentIndex);
+//     currentIndex -= 1;
+//
+//     // And swap it with the current element.
+//     temporaryValue = words[currentIndex];
+//     words[currentIndex] = words[randomIndex];
+//     words[randomIndex] = temporaryValue;
+//   }
+//   return words;
+// };
 
 //MAKE SENTENCE
 let popo = ["Hong", "Kong", "Police"]

@@ -303,17 +303,11 @@ div::-webkit-scrollbar-thumb:hover {
   line-height: 1.8;
 }
 
-#grey{
-  color: #555;
-}
+#grey{color: #555;}
 
-a{
-  color: #ffd441;
-}
+a{color: #ffd441;}
 
-a:hover{
-  color: #fff;
-}
+a:hover{color: #fff;}
 
 /* ----------- Tablets ----------- */
 
@@ -512,6 +506,12 @@ a:hover{
     #button-mobile{
       display:block;
       margin: 10% auto;
+    }
+
+    #submit-mobile{
+      padding: 20px 60px;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 18px;
     }
 
 /* Credit */
