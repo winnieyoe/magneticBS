@@ -1,4 +1,14 @@
 //FIREBASE
+var firebaseConfig = {
+  apiKey: "AIzaSyC6NcP8kFHNB2SuBKkXV980-uufg2rdI14",
+  authDomain: "magneticbs-hk.firebaseapp.com",
+  databaseURL: "https://magneticbs-hk.firebaseio.com",
+  projectId: "magneticbs-hk",
+  storageBucket: "magneticbs-hk.appspot.com",
+  messagingSenderId: "1051793330330",
+  appId: "1:1051793330330:web:9474d3dcc03a78868b0f23",
+  measurementId: "G-EDVW101NCL"
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
