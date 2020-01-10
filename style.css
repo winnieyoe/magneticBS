@@ -6,7 +6,6 @@
   url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.ttf") format("truetype"),
   url("fonts/1eb5591e6d07fc6d6141d5bedbb9eb2f.svg#GT America Extended Black") format("svg");
 } */
-
 /* @font-face {
     font-family: 'TiemposText';
     src: url('TiemposText.eot');
@@ -16,8 +15,7 @@
     font-weight: normal;
     font-style: normal;
 } */
-
-body{
+body {
   background-color: #121212;
   font-size: 16px;
   width: 92%;
@@ -25,7 +23,7 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 
-h1{
+h1 {
   /* font-family: 'GT America Extended Black'; */
   font-family: 'Archivo Black', sans-serif;
   color: #ffd441;
@@ -35,7 +33,7 @@ h1{
   -webkit-font-smoothing: antialiased;
 }
 
-h2{
+h2 {
   /* font-family: 'GT America Extended'; */
   font-family: 'Archivo Black', sans-serif;
   font-size: 40px;
@@ -46,31 +44,32 @@ h2{
   margin-bottom: 10px;
 }
 
-p{
+p {
   /* font-family: 'TiemposText'; */
   font-family: 'Neuton', serif;
   font-weight: 400;
   font-size: 19px;
   letter-spacing: 0.02em;
   color: #FFF;
+  -webkit-font-smoothing: antialiased;
 }
 
-#header{
+#header {
   margin-top: 2%;
 }
 
-#sections{
+#sections {
   display: flex;
   flex-direction: column;
 }
 
 /* Part 1: intro */
-#topDiv{
+#topDiv {
   display: flex;
   flex-direction: column;
 }
 
-#introDiv{
+#introDiv {
   margin: 1% 0% 5% 0%;
   display: inline-flex;
   position: relative;
@@ -79,17 +78,17 @@ p{
 }
 
 #vidDiv:before {
-  content:"";
+  content: "";
   position: absolute;
-  top:0;
-  right:0;
-  left:0;
-  bottom:0;
-  z-index:1;
-  background:linear-gradient(to left,rgba(10, 10, 10, 0.4),rgba(10, 10, 10, 0.8));
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(to left, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.8));
 }
 
-#vidDiv{
+#vidDiv {
   left: 0%;
   top: 0%;
   width: 100%;
@@ -98,11 +97,11 @@ p{
   z-index: -1;
 }
 
-#video{
+#video {
   width: 100%;
 }
 
-#text1{
+#text1 {
   z-index: 999;
   position: absolute;
   top: 100px;
@@ -116,40 +115,40 @@ p{
   justify-content: center;
 }
 
-#introText{
+#introText {
   line-height: 1.8;
 }
 
 /* Part 2: method */
-#methodDiv{
+#methodDiv {
   margin: 0% 0% 5% 5%;
   display: flex;
   flex-direction: row;
   /* justify-content: space-between; */
 }
 
-#methodHead-mobile{
-  display:none;
+#methodHead-mobile {
+  display: none;
 }
 
-#text2{
+#text2 {
   margin-right: 5%;
-  width:90%;
+  width: 90%;
   line-height: 1.8;
 }
 
-#sampleDiv{
+#sampleDiv {
   width: 100%;
 }
 
-#sample{
+#sample {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin: 20% 0% 0% 0%;
 }
 
-.sample{
+.sample {
   display: none;
   font-size: 22px;
   padding: 5px 15px 5px 15px;
@@ -157,16 +156,16 @@ p{
   background-color: #FFFFFF;
 }
 
-#arrow{
+#arrow {
   width: 6%;
   margin: 0 auto 0 auto;
 }
 
-#begin{
+#begin {
   margin: 0 auto;
 }
 
-#beginButton{
+#beginButton {
   border: none;
   background-color: inherit;
   color: #ffd441;
@@ -177,11 +176,11 @@ p{
 }
 
 /* Part 3: create */
-#createDivWrapper{
+#createDivWrapper {
   /* display: none; */
 }
 
-#createDiv{
+#createDiv {
   display: flex;
   flex-direction: row;
   /* justify-content: space-between; */
@@ -189,21 +188,25 @@ p{
   margin: 8% 5% 10% 5%;
 }
 
-#create{
-  display:flex;
+#create {
+  display: flex;
   flex-direction: column;
 }
 
-#instruction{
+#instruction {
   width: 90%;
   margin: 5% 0% 10% 0%;
 }
 
-#allWordsDiv{
+#wordlist{
+  display: none;
+}
+
+#allWordsDiv {
   width: 48%;
 }
 
-#allWords{
+#allWords {
   display: flex;
   flex-flow: row wrap;
   padding: 0px 20px 0px 0px;
@@ -213,32 +216,32 @@ p{
   justify-content: center;
 }
 
-#sentenceSection{
+#sentenceSection {
   width: 55%;
   /* margin: auto 4% auto 0%; */
   /* overflow: auto; */
 }
 
-#sentence{
+#sentence {
   display: flex;
   flex-flow: row wrap;
 }
 
-#button{
+#button {
   margin-top: 10%;
 }
 
-#submit{
+#submit {
   padding: 20px 60px;
   font-family: 'Archivo Black', sans-serif;
   font-size: 18px;
 }
 
-#button-mobile{
+#button-mobile {
   display: none;
 }
 
-.popo{
+.popo {
   font-size: 20px;
   padding: 5px 15px 5px 15px;
   margin: 5px 10px 5px 0px;
@@ -246,7 +249,7 @@ p{
   color: #111;
 }
 
-.word{
+.word {
   padding: 5px 15px 5px 15px;
   margin: 16px 12px 0px 0px;
   background-color: #FFFFFF;
@@ -256,7 +259,7 @@ p{
   border-right: 1px solid #222222; */
 }
 
-.clicked{
+.clicked {
   font-size: 20px;
   margin: 5px 10px 5px 0px;
   /* display: none; */
@@ -294,235 +297,288 @@ div::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
-#creditDiv{
-  margin-bottom: 2%;
+#creditDiv {
+  margin-bottom: 3%;
 }
 
-#credit{
+.credit {
   font-size: 14px;
   line-height: 1.8;
 }
 
-#grey{color: #555;}
+#grey {
+  color: #555;
+}
 
-a{color: #ffd441;}
+a {
+  color: #ffd441;
+}
 
-a:hover{color: #fff;}
+a:hover {
+  color: #fff;
+}
 
 /* ----------- Tablets ----------- */
-
 /* ----------- Phones ----------- */
-@media only screen
-  and (max-width: 767.98px){
-    h1{
-      /* font-family: 'GT America Extended Black'; */
-      font-family: 'Archivo Black', sans-serif;
-      color: #ffd441;
-      font-size: 16px;
-      letter-spacing: 0.01em;
-      width: 80%;
-      margin: auto;
-      text-align: center;
-      -webkit-font-smoothing: antialiased;
-    }
+@media only screen and (max-width: 767.98px) {
+  h1 {
+    /* font-family: 'GT America Extended Black'; */
+    font-family: 'Archivo Black', sans-serif;
+    color: #ffd441;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    h2{
-      /* font-family: 'GT America Extended'; */
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 30px;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      color: #FFF;
-      -webkit-font-smoothing: antialiased;
-      margin-bottom: 10px;
-    }
+  h2 {
+    /* font-family: 'GT America Extended'; */
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 30px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #FFF;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 10px;
+  }
 
-    p{
-      /* font-family: 'TiemposText'; */
-      font-family: 'Neuton', serif;
-      font-weight: 400;
-      font-size: 17px;
-      letter-spacing: 0.02em;
-      color: #FFF;
-    }
+  p {
+    /* font-family: 'TiemposText'; */
+    font-family: 'Neuton', serif;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    color: #FFF;
+  }
 
-    #header{
-      margin: 4% auto 0% auto;
-    }
+  #header {
+    margin: 6% auto 0% auto;
+  }
 
-/* Intro*/
-    #introDiv{
-      display: flex;
-      flex-direction: column;
-    }
+  /* Intro*/
+  #introDiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0%;
+  }
 
-    #vidDiv{
-      width: 100%;
-      z-index: auto;
-      margin-top: 0%;
-    }
+  #vidDiv {
+    width: 100%;
+    z-index: auto;
+    margin-top: 0%;
+  }
 
-    #vidDiv:before {
-      content:"";
-      position: relative;
-      top:0;
-      right:0;
-      left:0;
-      bottom:0;
-      z-index:auto;
-      background:none;
-    }
+  #vidDiv:before {
+    content: "";
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: auto;
+    background: none;
+  }
 
-    #text1{
-      z-index: auto;
-      position: relative;
-      top: 0;
-      width: 90%;
-      margin: auto;
-      display: flex;
-      text-align: center;
-      flex-direction: column;
-      justify-content: center;
-    }
+  #text1 {
+    z-index: auto;
+    position: relative;
+    top: 0;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    #introText{
-      width: 100%;
-      justify-content: center;
-    }
+  #introText {
+    width: 100%;
+    justify-content: center;
+  }
 
-/* Method */
-    #methodDiv{
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      margin: auto;
-    }
+  /* Method */
+  #methodDiv {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+  }
 
-    #text2{
-      text-align: center;
-      margin: auto;
-    }
+  #text2 {
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+  }
 
-    #methodText{
-      margin: auto;
-    }
+  #methodText {
+    margin: auto;
+  }
 
-    #methodHead-mobile{
-      display: block;
-      order: 1;
-    }
+  #methodHead-mobile {
+    display: block;
+    order: 1;
+  }
 
-    #methodHead{
-      display: none;
-    }
+  #methodHead {
+    display: none;
+  }
 
-    #methodDiv :nth-child(1){order:1;}
-    #methodDiv :nth-child(2){order:3;}
-    #methodDiv :nth-child(3){order:2;}
+  #methodDiv :nth-child(1) {
+    order: 1;
+  }
 
-    .sample{
-      display: none;
-      font-size: 18px;
-      padding: 5px 15px 5px 15px;
-      margin: 15px 8px 0px 8px;
-      background-color: #FFFFFF;
-    }
+  #methodDiv :nth-child(2) {
+    order: 3;
+  }
 
-    #sample{
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      margin: 0% 0% 5% 0%;
-    }
+  #methodDiv :nth-child(3) {
+    order: 2;
+  }
 
-    #arrow{
-      margin-top: 8%;
-      width: 12%;
-    }
+  .sample {
+    display: none;
+    font-size: 18px;
+    padding: 5px 15px 5px 15px;
+    margin: 15px 8px 0px 8px;
+    background-color: #FFFFFF;
+  }
 
-/* Create Sentence */
-    #createDiv{
-      display: flex;
-      flex-direction: column;
-    }
+  #sample {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0% 0% 5% 0%;
+  }
 
-    #instruction{
-      text-align: center;
-      width: 100%;
-      margin-bottom: 2%;
-    }
+  #arrow {
+    margin-top: 8%;
+    width: 20%;
+  }
 
-    #sentenceSection{
-      width: 100%;
-      text-align: center;
-      background-color: #191919;
-      padding-top: 5%;
-      padding-bottom: 40%;
-      /* overflow: auto; */
-    }
+  /* Create Sentence */
+  #createDiv {
+    display: flex;
+    flex-direction: column;
+  }
 
-    #sentence{
-      justify-content: center;
-    }
+  #instruction {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2%;
+  }
 
-    .popo{
-      font-size: 20px;
-      padding: 5px 15px 5px 15px;
-      margin: 5px 5px 5px 5px;
-      background-color: #ffd441;
-      color: #111;
-    }
+  #sentenceSection {
+    width: 100%;
+    text-align: center;
+    background-color: #282828;
+    padding-top: 5%;
+    padding-bottom: 60%;
+    /* overflow: auto; */
+  }
 
-    #allWordsDiv{
-      width: 100%;
-    }
+  #sentence {
+    justify-content: center;
+  }
 
-    #allWords{
-      width: 100%;
-      font-size: 20px;
-      display: flex;
-      flex-flow: row wrap;
-      padding: 20px 20px 0px 0px;
-      margin: 2% 10% 2% 0%;
-      height: 200px;
-      overflow-y: scroll;
-      justify-content: center;
-    }
+  .popo {
+    font-size: 20px;
+    padding: 5px 15px 5px 15px;
+    margin: 5px 5px 5px 5px;
+    background-color: #ffd441;
+    color: #111;
+  }
 
-    .word{
-      padding: 5px 15px 5px 15px;
-      margin: 10px 10px 10px 8px;
-      background-color: #FFFFFF;
-      cursor: pointer;
-      /* border: 1px solid #AAAAAA; */
-      /* border-bottom: 1px solid #222222;
+  #wordlist{
+    margin-top: 6%;
+    display: block;
+    color: #FFF;
+    text-align: center;
+  }
+
+  #allWordsDiv {
+    width: 100%;
+  }
+
+  #allWords {
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5px 10px 0px 0px;
+    margin: 5% 0% 2% 0%;
+    height: 200px;
+    overflow-y: scroll;
+    justify-content: center;
+  }
+
+  .word {
+    padding: 5px 15px 5px 15px;
+    margin: 10px 10px 10px 8px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    /* border: 1px solid #AAAAAA; */
+    /* border-bottom: 1px solid #222222;
       border-right: 1px solid #222222; */
-    }
+  }
 
-    #button{
-      display:none;
-    }
+  div::-webkit-scrollbar {
+    width: 6px;
+  }
 
-    #button-mobile{
-      display:block;
-      margin: 10% auto;
-    }
+  #button {
+    display: none;
+  }
 
-    #submit-mobile{
-      padding: 20px 60px;
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 18px;
-    }
+  #button-mobile {
+    display: block;
+    margin: 10% auto;
+  }
 
-/* Credit */
-    #creditDiv{
-      margin-bottom: 5%;
-    }
+  #submit-mobile {
+    padding: 20px 60px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 18px;
+  }
 
-    #credit{
-      font-size: 10px;
-      line-height: normal;
-    }
+  /* Credit */
+  #creditDiv {
+    margin-bottom: 10%;
+  }
 
+  .credit {
+    font-size: 12px;
+    line-height: 1.4;
+  }
 }
+
 /* ----------- Small Phones ----------- */
+@media only screen and (max-width: 575.98px) {
+  h2 {
+    /* font-family: 'GT America Extended'; */
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #FFF;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 10px;
+  }
+
+  #submit-mobile {
+    padding: 20px 60px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 16px;
+  }
+
+  #sentenceSection {
+    width: 100%;
+    text-align: center;
+    background-color: #282828;
+    padding-top: 5%;
+    padding-bottom: 40%;
+    /* overflow: auto; */
+  }
+}

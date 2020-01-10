@@ -1,14 +1,5 @@
 //FIREBASE
-var firebaseConfig = {
-  apiKey: "AIzaSyC6NcP8kFHNB2SuBKkXV980-uufg2rdI14",
-  authDomain: "magneticbs-hk.firebaseapp.com",
-  databaseURL: "https://magneticbs-hk.firebaseio.com",
-  projectId: "magneticbs-hk",
-  storageBucket: "magneticbs-hk.appspot.com",
-  messagingSenderId: "1051793330330",
-  appId: "1:1051793330330:web:9474d3dcc03a78868b0f23",
-  measurementId: "G-EDVW101NCL"
-};
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
@@ -122,10 +113,16 @@ for (let i = 0; i < sampleWords.length; i++) {
   // })
 }
 //Sample words fade in one by one
-$('.sample').each(function(i) {
-  $(this).delay(200*(i+1)).fadeIn(100);
-  $(".sample").each(rotate);
-});
+$(window).scroll(function(){
+  let y = $(window).scrollTop();
+
+  if (y>100){
+    $('.sample').each(function(i) {
+      $(this).delay(200*(i+1)).fadeIn(100);
+      $(".sample").each(rotate);
+    });
+  }
+})
 
 function find_dup(arra1) {
   var object = {};

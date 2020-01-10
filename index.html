@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Gentium+Basic|Neuton:300,400&display=swap" rel="stylesheet">
+  <script type='text/javascript' src='config.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" charset="utf-8"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -18,7 +19,7 @@
     <div id="topDiv">
       <div id="introDiv">
         <div id="vidDiv">
-          <video autoplay id="video">
+          <video autoplay muted id="video">
             <source src="assets/presscon.mp4" type="video/mp4">
           </video>
         </div>
@@ -82,6 +83,7 @@
         </div>
 
         <div id="allWordsDiv">
+          <h1 id="wordlist">Scroll Through List, Tap to Select</h1>
           <div id="allWords">
           </div>
         </div>
@@ -95,7 +97,8 @@
   </div>
 
   <div id="creditDiv">
-    <h1 id="credit">Created by <a href="https://www.winnieyoe.com/" target="_blank">Winnie Yoe</a> <span id="grey">(Part of an on-going research project)</span></h1>
+    <h1 class="credit">Created by <a href="https://www.winnieyoe.com/" target="_blank">Winnie Yoe</a> <span id="grey">(Part of an on-going research project)</span>
+    Special Thanks: Sukanya Aneja, Mark Lam, Rui An</h1>
   </div>
 </body>
 
