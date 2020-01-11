@@ -13,7 +13,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
-console.log(firebase);
+// console.log(firebase);
 
 //Firebase Authentication
 firebase.auth().signInAnonymously().catch(function(error) {
@@ -32,12 +32,11 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-
 var database = firebase.database();
-var result = database.ref("result");
 var userData = {
-  "sentence": "",
+  "sentence": ""
 };
+
 
 //BUTTON to go to create sentence section
 let startB = document.getElementById("arrow");
@@ -127,12 +126,12 @@ for (let i = 0; i < sampleWords.length; i++) {
   // })
 }
 //Sample words fade in one by one
-$(window).scroll(function(){
+$(window).scroll(function() {
   let y = $(window).scrollTop();
 
-  if (y>100){
+  if (y > 100) {
     $('.sample').each(function(i) {
-      $(this).delay(200*(i+1)).fadeIn(100);
+      $(this).delay(200 * (i + 1)).fadeIn(100);
       $(".sample").each(rotate);
     });
   }
@@ -197,7 +196,6 @@ let popo = ["Hong", "Kong", "Police"]
 
 $.each(popo, function(index, item) {
   $("#sentence").append("<span class='popo'>" + item + "</span>");
-
   //Rotate popo
   $(".popo").each(rotate);
 })
@@ -217,26 +215,49 @@ function rotate() {
 }
 
 //Find out which word on left is selected, append to the right side if so
-// let clicked = false;
 let selectedWords = [];
 
 $(document).ready(function() {
-  $(".word").on("click",function() {
-      if ($(this).hasClass("clicked") == false) {
-        $(this).addClass("clicked");
-        thisWord = $(this).text();
-        $(this).appendTo("#sentence");
-        // console.log(this.id, thisWord)
-        // clicked = true;
-      } else {
-        $(this).removeClass("clicked");
-        $(this).appendTo("#allWords");
-        thisWord = $(this).text;
-        // selectedWords.pop(thisWord);
-        // clicked = false;
-      }
+  // $(".word").on("click",function() {
+  //     if ($("#sentence").hasClass("clicked") == false) {
+  //       $(this).addClass("clicked");
+  //       thisWord = $(this).text();
+  //       $(this).clone().appendTo("#sentence");
+  //
+  //       if($("#allWords").find(".clicked").length > 0){
+  //         $(this).addClass("greyOut");
+  //         $(this).removeClass("clicked");
+  //       }
+  //       // console.log(this.id, thisWord)
+  //     } else {
+  //       console.log("yes")
+  //       if($("#sentence").find(".clicked").length > 0){
+  //         $("#sentence:last").remove();
+  //       }
+  //       // $(this).removeClass("clicked");
+  //       // $(this).appendTo("#allWords");
+  //       // thisWord = $(this).text();
+  //       // selectedWords.pop(thisWord);
+  //     }
+  //   }
+  // )
+
+  $(".word").on("click", function() {
+    if ($(this).hasClass("clicked") == false) {
+      $(this).addClass("clicked");
+      thisWord = $(this).text();
+      $(this).appendTo("#sentence");
+      console.log(this.id, thisWord)
+      // clicked = true;
+    } else {
+      $(this).removeClass("clicked");
+      $(this).appendTo("#allWords");
+      thisWord = $(this).text;
+      // selectedWords.pop(thisWord);
+      // clicked = false;
     }
-  )
+  })
+
 
   // $(".word").click(
   //   function() {
@@ -256,6 +277,9 @@ $(document).ready(function() {
   //   }
   // )
   //Submit sentence
+  var ref = database.ref("result");
+  ref.on("value", gotData, errData);
+
   $("#submit").on("click", function() {
     let all = document.querySelectorAll(".clicked");
     for (let i = 0; i < all.length; i++) {
@@ -263,7 +287,7 @@ $(document).ready(function() {
     }
     // console.log("selected", selectedWords);
     userData.sentence = selectedWords;
-    result.push(selectedWords);
+    ref.push(selectedWords);
   });
 
   //Submit Sentence mobile
@@ -274,11 +298,51 @@ $(document).ready(function() {
     }
     // console.log("selected", selectedWords);
     userData.sentence = selectedWords;
-    result.push(selectedWords);
+    ref.push(selectedWords);
+    // ref.on("value", gotData, errData);
   });
 })
 
+//Submit Button
+let rDiv = document.getElementById("resultDiv");
+let submitB = document.getElementById("submit");
+let submitMobileB = document.getElementById("submit-mobile");
+
+submitB.addEventListener("click", function() {
+  rDiv.style.display = "block";
+})
+
+submitMobileB.addEventListener("click", function() {
+  rDiv.style.display = "block";
+})
+
+//back home
+let backDiv = document.getElementById("back");
+
+backDiv.addEventListener("click", function() {
+  location.reload();
+
+  $(document).ready(function() {
+    $(this).scrollTop(0);
+  });
+})
+
+
+
+//VISUALIZE RESULTS
+function gotData(data) {
+  let answers = data.val();
+  let words = Object.values(answers);
+  console.log(words)
+
+  for (let i = 0; i < words.length; i++) {
+    $("#result").append("<span class='lineY'>" + "Hong Kong Police " + "</span>" + words[i].join(" ") + "." + "<br>")
+    console.log(words[i], words[i].length)
+    console.log("Hong Kong Police " + words[i].join(" "))
+  }
+}
+
 function errData(err) {
-  // console.log("Error");
-  // console.log(err);
+  console.log("Error");
+  console.log(err);
 }
