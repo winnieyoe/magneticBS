@@ -218,45 +218,45 @@ function rotate() {
 let selectedWords = [];
 
 $(document).ready(function() {
-  // $(".word").on("click",function() {
-  //     if ($("#sentence").hasClass("clicked") == false) {
-  //       $(this).addClass("clicked");
-  //       thisWord = $(this).text();
-  //       $(this).clone().appendTo("#sentence");
-  //
-  //       if($("#allWords").find(".clicked").length > 0){
-  //         $(this).addClass("greyOut");
-  //         $(this).removeClass("clicked");
-  //       }
-  //       // console.log(this.id, thisWord)
-  //     } else {
-  //       console.log("yes")
-  //       if($("#sentence").find(".clicked").length > 0){
-  //         $("#sentence:last").remove();
-  //       }
-  //       // $(this).removeClass("clicked");
-  //       // $(this).appendTo("#allWords");
-  //       // thisWord = $(this).text();
-  //       // selectedWords.pop(thisWord);
-  //     }
-  //   }
-  // )
+  $(".word").on("click",function() {
+      if ($(this).hasClass("clicked") == false) {
+        $(this).addClass("clicked");
+        thisWord = $(this).text();
+        $(this).clone().appendTo("#sentence");
 
-  $(".word").on("click", function() {
-    if ($(this).hasClass("clicked") == false) {
-      $(this).addClass("clicked");
-      thisWord = $(this).text();
-      $(this).appendTo("#sentence");
-      console.log(this.id, thisWord)
-      // clicked = true;
-    } else {
-      $(this).removeClass("clicked");
-      $(this).appendTo("#allWords");
-      thisWord = $(this).text;
-      // selectedWords.pop(thisWord);
-      // clicked = false;
+        if($("#allWords").find(".clicked").length > 0){
+          $(this).addClass("greyOut");
+          $(this).removeClass("clicked");
+        }
+        // console.log(this.id, thisWord)
+      } else {
+        console.log("yes")
+        if($("#sentence").find(".clicked").length > 0){
+          $("#sentence:last").remove();
+        }
+        // $(this).removeClass("clicked");
+        // $(this).appendTo("#allWords");
+        // thisWord = $(this).text();
+        // selectedWords.pop(thisWord);
+      }
     }
-  })
+  )
+
+  // $(".word").on("click", function() {
+  //   if ($(this).hasClass("clicked") == false) {
+  //     $(this).addClass("clicked");
+  //     thisWord = $(this).text();
+  //     $(this).appendTo("#sentence");
+  //     console.log(this.id, thisWord)
+  //     // clicked = true;
+  //   } else {
+  //     $(this).removeClass("clicked");
+  //     $(this).appendTo("#allWords");
+  //     thisWord = $(this).text;
+  //     // selectedWords.pop(thisWord);
+  //     // clicked = false;
+  //   }
+  // })
 
 
   // $(".word").click(
@@ -336,10 +336,11 @@ function gotData(data) {
   // console.log(words)
 
   for (let i = 0; i < words.length; i++) {
-    console.log(words)
+    // console.log(words)
     $("#result").append("<span class='lineY'>" + "Hong Kong Police " + "</span>" + words[i].join(" ") + "." + "<br>")
+    ///put the li before the j loop and close it
     for(let j=0; j<words[i].length; j++){
-      console.log(words[i][j])
+      console.log(words[i][j], [i])
     }
     // console.log(words[i], words[i].length)
     // console.log("Hong Kong Police " + words[i].join(" "))
