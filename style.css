@@ -572,6 +572,17 @@ a:hover {
     font-size: 18px;
   }
 
+  #resultDiv{
+    margin: auto auto 15% auto;
+    width:90%;
+    text-align: center;
+  }
+
+  #result{
+    margin: 5% auto 5% auto;
+    font-size:20px;
+  }
+
   /* Credit */
   #creditDiv {
     margin-bottom: 10%;

@@ -333,12 +333,16 @@ backDiv.addEventListener("click", function() {
 function gotData(data) {
   let answers = data.val();
   let words = Object.values(answers);
-  console.log(words)
+  // console.log(words)
 
   for (let i = 0; i < words.length; i++) {
+    console.log(words)
     $("#result").append("<span class='lineY'>" + "Hong Kong Police " + "</span>" + words[i].join(" ") + "." + "<br>")
-    console.log(words[i], words[i].length)
-    console.log("Hong Kong Police " + words[i].join(" "))
+    for(let j=0; j<words[i].length; j++){
+      console.log(words[i][j])
+    }
+    // console.log(words[i], words[i].length)
+    // console.log("Hong Kong Police " + words[i].join(" "))
   }
 }
 
