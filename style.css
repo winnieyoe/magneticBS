@@ -104,7 +104,7 @@ p {
 
 #text1{
   position: absolute;
-  top: 25%; right: 0; bottom: 0; left: 0;
+  top: 35%; right: 0; bottom: 0; left: 0;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -338,6 +338,8 @@ div::-webkit-scrollbar-thumb:hover {
 }
 
 .credit {
+  margin: auto;
+  width: 70%;
   font-size: 14px;
   line-height: 1.8;
 }
@@ -405,7 +407,7 @@ a:hover {
   }
 
   #resultDiv{
-    margin: auto auto 15% auto;
+    margin: auto auto 10% auto;
     width:90%;
   }
 
