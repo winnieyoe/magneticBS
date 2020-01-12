@@ -94,27 +94,36 @@ p {
   top: 0%;
   width: 100%;
   overflow: hidden;
-  /* position: absolute; */
+  position: relative;
   z-index: -1;
 }
 
-#video {
-  width: 100%;
+#vidDiv video{
+  width:100%;
 }
 
-#text1 {
+#text1{
+  position: absolute;
+  top: 25%; right: 0; bottom: 0; left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 40%;
+  margin-left: 5%;
+}
+
+/* #text1 {
   z-index: 999;
   position: absolute;
   top: 100px;
   width: 40%;
-  /* text-align: left; */
   margin-left: 5%;
   display: flex;
   margin-top: 15%;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-}
+} */
 
 #introText {
   line-height: 1.8;
@@ -348,8 +357,14 @@ a:hover {
 }
 
 /* ----------- Tablets ----------- */
+
+@media only screen and (max-width: 1024px){
+
+}
+
+
 /* ----------- Phones ----------- */
-@media only screen and (max-width: 767.98px) {
+@media only screen and (max-width: 768px) {
   h1 {
     /* font-family: 'GT America Extended Black'; */
     font-family: 'Archivo Black', sans-serif;
@@ -595,7 +610,7 @@ a:hover {
 }
 
 /* ----------- Small Phones ----------- */
-@media only screen and (max-width: 575.98px) {
+@media only screen and (max-width: 568px) {
   h2 {
     /* font-family: 'GT America Extended'; */
     font-family: 'Archivo Black', sans-serif;

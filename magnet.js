@@ -42,12 +42,10 @@ var userData = {
 let startB = document.getElementById("arrow");
 let introDiv = document.getElementById("topDiv");
 let createDiv = document.getElementById("createDivWrapper");
-let creditDiv = document.getElementById("creditDiv");
 
 startB.addEventListener("click", function() {
   introDiv.style.display = "none";
   createDivWrapper.style.display = "block";
-  creditDiv.style.display = "block";
   $('html, body').scrollTop($('#createDivWrapper').offset().top);
   return false
 })
@@ -218,64 +216,47 @@ function rotate() {
 let selectedWords = [];
 
 $(document).ready(function() {
-  $(".word").on("click",function() {
-      if ($(this).hasClass("clicked") == false) {
-        $(this).addClass("clicked");
-        thisWord = $(this).text();
-        $(this).clone().appendTo("#sentence");
-
-        if($("#allWords").find(".clicked").length > 0){
-          $(this).addClass("greyOut");
-          $(this).removeClass("clicked");
-        }
-        // console.log(this.id, thisWord)
-      } else {
-        console.log("yes")
-        if($("#sentence").find(".clicked").length > 0){
-          $("#sentence:last").remove();
-        }
-        // $(this).removeClass("clicked");
-        // $(this).appendTo("#allWords");
-        // thisWord = $(this).text();
-        // selectedWords.pop(thisWord);
-      }
-    }
-  )
-
-  // $(".word").on("click", function() {
-  //   if ($(this).hasClass("clicked") == false) {
-  //     $(this).addClass("clicked");
-  //     thisWord = $(this).text();
-  //     $(this).appendTo("#sentence");
-  //     console.log(this.id, thisWord)
-  //     // clicked = true;
-  //   } else {
-  //     $(this).removeClass("clicked");
-  //     $(this).appendTo("#allWords");
-  //     thisWord = $(this).text;
-  //     // selectedWords.pop(thisWord);
-  //     // clicked = false;
-  //   }
-  // })
-
-
-  // $(".word").click(
-  //   function() {
+  // $(".word").on("click",function() {
   //     if ($(this).hasClass("clicked") == false) {
   //       $(this).addClass("clicked");
   //       thisWord = $(this).text();
-  //       $(this).appendTo("#sentence");
-  //       console.log(this.id, thisWord)
-  //       // clicked = true;
+  //       $(this).clone().appendTo("#sentence");
+  //
+  //       if($("#allWords").find(".clicked").length > 0){
+  //         $(this).addClass("greyOut");
+  //         $(this).removeClass("clicked");
+  //       }
+  //       // console.log(this.id, thisWord)
   //     } else {
-  //       $(this).removeClass("clicked");
-  //       $(this).appendTo("#allWords");
-  //       thisWord = $(this).text;
+  //       console.log("yes")
+  //       if($("#sentence").find(".clicked").length > 0){
+  //         $("#sentence:last").remove();
+  //       }
+  //       // $(this).removeClass("clicked");
+  //       // $(this).appendTo("#allWords");
+  //       // thisWord = $(this).text();
   //       // selectedWords.pop(thisWord);
-  //       // clicked = false;
   //     }
   //   }
   // )
+
+  $(".word").click(
+    function() {
+      if ($(this).hasClass("clicked") == false) {
+        $(this).addClass("clicked");
+        thisWord = $(this).text();
+        $(this).appendTo("#sentence");
+        console.log(this.id, thisWord)
+        // clicked = true;
+      } else {
+        $(this).removeClass("clicked");
+        $(this).appendTo("#allWords");
+        thisWord = $(this).text;
+        // selectedWords.pop(thisWord);
+        // clicked = false;
+      }
+    }
+  )
   //Submit sentence
   var ref = database.ref("result");
   ref.on("value", gotData, errData);
@@ -305,15 +286,26 @@ $(document).ready(function() {
 
 //Submit Button
 let rDiv = document.getElementById("resultDiv");
+let creditDiv = document.getElementById("creditDiv");
 let submitB = document.getElementById("submit");
 let submitMobileB = document.getElementById("submit-mobile");
 
 submitB.addEventListener("click", function() {
   rDiv.style.display = "block";
+  creditDiv.style.display = "block"
+
+  $('html, body').animate({
+    scrollTop: $("#resultDiv").offset().top
+  }, 1000)
 })
 
 submitMobileB.addEventListener("click", function() {
   rDiv.style.display = "block";
+  creditDiv.style.display = "block"
+
+  $('html, body').animate({
+    scrollTop: $("#resultDiv").offset().top
+  }, 1000)
 })
 
 //back home
@@ -339,8 +331,8 @@ function gotData(data) {
     // console.log(words)
     $("#result").append("<span class='lineY'>" + "Hong Kong Police " + "</span>" + words[i].join(" ") + "." + "<br>")
     ///put the li before the j loop and close it
-    for(let j=0; j<words[i].length; j++){
-      console.log(words[i][j], [i])
+    for (let j = 0; j < words[i].length; j++) {
+      // console.log(words[i][j], [i])
     }
     // console.log(words[i], words[i].length)
     // console.log("Hong Kong Police " + words[i].join(" "))
