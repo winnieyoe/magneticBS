@@ -242,9 +242,7 @@ p {
 }
 
 #submit {
-  padding: 20px 60px;
   font-family: 'Archivo Black', sans-serif;
-  font-size: 18px;
 }
 
 #button-mobile {
@@ -285,8 +283,8 @@ button, input[type="submit"] {
   border: none;
   color: #FFF;
   background-color: #282828;
-  padding: 14px 30px;
-  font-size: 14px;
+  padding: 20px 60px;
+  font-size: 18px;
   cursor: pointer;
 }
 
@@ -594,8 +592,8 @@ a:hover {
   }
 
   #result{
-    margin: 5% auto 5% auto;
-    font-size:20px;
+    margin: 10% auto 10% auto;
+    font-size:18px;
   }
 
   /* Credit */
