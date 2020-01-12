@@ -357,7 +357,64 @@ a:hover {
 /* ----------- Tablets ----------- */
 
 @media only screen and (max-width: 1024px){
+  h2 {
+    /* font-family: 'GT America Extended'; */
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #FFF;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 10px;
+  }
 
+  p {
+    /* font-family: 'TiemposText'; */
+    font-family: 'Neuton', serif;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    color: #FFF;
+  }
+
+  #introDiv{
+    margin-bottom: 2%;
+  }
+
+  #text1{
+    top: 80px;
+    width: 60%;
+  }
+
+  #methodDiv{
+    margin-bottom: 2%;
+  }
+
+  #text2{
+    margin-top: 0%;
+    width: 180%;
+  }
+
+  #sample{
+    margin-top: 40%;
+    width: 100%;
+  }
+
+  #arrow{
+    width: 10%;
+  }
+
+  #resultDiv{
+    margin: auto auto 15% auto;
+    width:90%;
+  }
+
+  .credit {
+    margin: auto;
+    width: 70%;
+    font-size: 12px;
+    line-height: 1.4;
+  }
 }
 
 
