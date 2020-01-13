@@ -336,7 +336,7 @@ backDiv.addEventListener("click", function() {
 function gotData(data) {
   let answers = data.val();
   let words = Object.values(answers);
-  // console.log(words)
+  shuffle(words);
 
   for (let i = 0; i < words.length; i++) {
     // console.log(words)
