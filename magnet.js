@@ -215,48 +215,61 @@ function rotate() {
 //Find out which word on left is selected, append to the right side if so
 let selectedWords = [];
 
-$(document).ready(function() {
-  // $(".word").on("click",function() {
-  //     if ($(this).hasClass("clicked") == false) {
-  //       $(this).addClass("clicked");
-  //       thisWord = $(this).text();
-  //       $(this).clone().appendTo("#sentence");
-  //
-  //       if($("#allWords").find(".clicked").length > 0){
-  //         $(this).addClass("greyOut");
-  //         $(this).removeClass("clicked");
-  //       }
-  //       // console.log(this.id, thisWord)
-  //     } else {
-  //       console.log("yes")
-  //       if($("#sentence").find(".clicked").length > 0){
-  //         $("#sentence:last").remove();
-  //       }
-  //       // $(this).removeClass("clicked");
-  //       // $(this).appendTo("#allWords");
-  //       // thisWord = $(this).text();
-  //       // selectedWords.pop(thisWord);
-  //     }
-  //   }
-  // )
+// THIS WILL ALLOW YOU TO CLICK ON
+// DYNAMICALLY CREATED HTML ELEMENTS O
+// IN #SENTENCE !!!
+$('div#sentence').on("click", "span", function(){
+  console.log("blugh")
+      if ($(this).hasClass("clicked") == true) {
+        console.log("yes")
+        if($("#sentence").find(".clicked").length > 0){
+          // $("#sentence:last").remove();
+          $(this).remove();
+        }
+}})
 
-  $(".word").click(
-    function() {
+$(document).ready(function() {
+  $(".word").on("click",function() {
       if ($(this).hasClass("clicked") == false) {
         $(this).addClass("clicked");
         thisWord = $(this).text();
-        $(this).appendTo("#sentence");
-        console.log(this.id, thisWord)
-        // clicked = true;
+        $(this).clone().appendTo("#sentence");
+
+        if($("#allWords").find(".clicked").length > 0){
+          $(this).addClass("greyOut");
+          $(this).removeClass("clicked");
+        }
+        // console.log(this.id, thisWord)
       } else {
-        $(this).removeClass("clicked");
-        $(this).appendTo("#allWords");
-        thisWord = $(this).text;
+        // console.log("yes")
+        // if($("#sentence").find(".clicked").length > 0){
+        //   $("#sentence:last").remove();
+        }
+        // $(this).removeClass("clicked");
+        // $(this).appendTo("#allWords");
+        // thisWord = $(this).text();
         // selectedWords.pop(thisWord);
-        // clicked = false;
       }
     }
   )
+
+  // $(".word").click(
+  //   function() {
+  //     if ($(this).hasClass("clicked") == false) {
+  //       $(this).addClass("clicked");
+  //       thisWord = $(this).text();
+  //       $(this).appendTo("#sentence");
+  //       console.log(this.id, thisWord)
+  //       // clicked = true;
+  //     } else {
+  //       $(this).removeClass("clicked");
+  //       $(this).appendTo("#allWords");
+  //       thisWord = $(this).text;
+  //       // selectedWords.pop(thisWord);
+  //       // clicked = false;
+  //     }
+  //   }
+  // )
   //Submit sentence
   var ref = database.ref("result");
   ref.on("value", gotData, errData);
