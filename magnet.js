@@ -214,23 +214,39 @@ function rotate() {
 
 //Find out which word on left is selected, append to the right side if so
 let selectedWords = [];
+let selectedElements = [];
+
+
+function findElementWithId(id){
+  for (let i=0; i<selectedElements.length; i++){
+    console.log(selectedElements[i].id);
+    if (selectedElements[i].id === id){
+        return selectedElements[i];
+    }
+  }
+}
+
 
 // THIS WILL ALLOW YOU TO CLICK ON
 // DYNAMICALLY CREATED HTML ELEMENTS O
 // IN #SENTENCE !!!
 $('div#sentence').on("click", "span", function(){
+  // console.log(selectedElements);
   console.log("blugh")
       if ($(this).hasClass("clicked") == true) {
-        console.log("yes")
-        if($("#sentence").find(".clicked").length > 0){
-          // $("#sentence:last").remove();
-          $(this).remove();
-        }
-}})
+        console.log("yes");
+        $(this).remove();
+        let toRevertElement = findElementWithId(this.id);
+        $(toRevertElement).removeClass("greyOut");
+        // if($("#sentence").find(".clicked").length > 0){
+        //   // $("#sentence:last").remove();
+        //   $(this).remove();
+        // }
+}});
 
 $(document).ready(function() {
   $(".word").on("click",function() {
-      if ($(this).hasClass("clicked") == false) {
+      if ($(this).hasClass("clicked") === false) {
         $(this).addClass("clicked");
         thisWord = $(this).text();
         $(this).clone().appendTo("#sentence");
@@ -238,6 +254,7 @@ $(document).ready(function() {
         if($("#allWords").find(".clicked").length > 0){
           $(this).addClass("greyOut");
           $(this).removeClass("clicked");
+          selectedElements.push(this);
         }
         // console.log(this.id, thisWord)
       } else {
