@@ -336,10 +336,10 @@ backDiv.addEventListener("click", function() {
 function gotData(data) {
   let answers = data.val();
   let words = Object.values(answers);
-  shuffle(words);
+  words = shuffle(words);
 
   for (let i = 0; i < words.length; i++) {
-    // console.log(words)
+
     $("#result").append("<span class='lineY'>" + "Hong Kong Police " + "</span>" + words[i].join(" ") + "." + "<br>")
     ///put the li before the j loop and close it
     for (let j = 0; j < words[i].length; j++) {
