@@ -221,7 +221,7 @@ function findElementWithId(id){
   for (let i=0; i<selectedElements.length; i++){
     console.log(selectedElements[i].id);
     if (selectedElements[i].id === id){
-        return selectedElements[i];
+        return [selectedElements[i], i];
     }
   }
 }
@@ -237,7 +237,22 @@ $('div#sentence').on("click", "span", function(){
         console.log("yes");
         $(this).remove();
         let toRevertElement = findElementWithId(this.id);
-        $(toRevertElement).removeClass("greyOut");
+        $(toRevertElement[0]).removeClass("greyOut");
+        $(toRevertElement[0]).bind("click", function() {
+          if ($(this).hasClass("clicked") === false) {
+            $(this).addClass("clicked");
+            thisWord = $(this).text();
+            $(this).clone().appendTo("#sentence");
+
+            if($("#allWords").find(".clicked").length > 0){
+              $(this).addClass("greyOut");
+              $(this).removeClass("clicked");
+              $(this).unbind("click");
+              selectedElements.push(this);
+            }
+          }
+        });
+        selectedElements.remove(toRevertElement[1]);
         // if($("#sentence").find(".clicked").length > 0){
         //   // $("#sentence:last").remove();
         //   $(this).remove();
@@ -245,7 +260,7 @@ $('div#sentence').on("click", "span", function(){
 }});
 
 $(document).ready(function() {
-  $(".word").on("click",function() {
+  $(".word").on("click", function() {
       if ($(this).hasClass("clicked") === false) {
         $(this).addClass("clicked");
         thisWord = $(this).text();
@@ -257,18 +272,9 @@ $(document).ready(function() {
           $(this).unbind("click");
           selectedElements.push(this);
         }
-        // console.log(this.id, thisWord)
-      } else {
-        // console.log("yes")
-        // if($("#sentence").find(".clicked").length > 0){
-        //   $("#sentence:last").remove();
-        }
-        // $(this).removeClass("clicked");
-        // $(this).appendTo("#allWords");
-        // thisWord = $(this).text();
-        // selectedWords.pop(thisWord);
+      }
       })
-    })
+});
 
   // $(".word").click(
   //   function() {
