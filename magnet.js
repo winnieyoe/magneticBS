@@ -249,9 +249,8 @@ $(document).ready(function() {
         // $(this).appendTo("#allWords");
         // thisWord = $(this).text();
         // selectedWords.pop(thisWord);
-      }
-    }
-  )
+      })
+    })
 
   // $(".word").click(
   //   function() {
@@ -295,7 +294,6 @@ $(document).ready(function() {
     ref.push(selectedWords);
     // ref.on("value", gotData, errData);
   });
-})
 
 //Submit Button
 let rDiv = document.getElementById("resultDiv");
