@@ -358,7 +358,7 @@ a:hover {
 
 /* ----------- Tablets ----------- */
 
-@media only screen and (max-width: 1024px){
+@media only screen and (min-width: 769) and (max-width: 1024px){
   h2 {
     /* font-family: 'GT America Extended'; */
     font-family: 'Archivo Black', sans-serif;
