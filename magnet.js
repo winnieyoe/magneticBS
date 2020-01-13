@@ -214,8 +214,26 @@ function rotate() {
   });
 }
 
+
 //Find out which word on left is selected, append to the right side if so
 let selectedWords = [];
+
+// THIS WILL ALLOW YOU TO CLICK ON 
+// DYNAMICALLY CREATED HTML ELEMENTS O
+// IN #SENTENCE !!!
+$('div#sentence').on("click", "span", function(){
+  console.log("blugh")
+      if ($(this).hasClass("clicked") == true) {
+        console.log("yes")
+        if($("#sentence").find(".clicked").length > 0){ 
+
+          $("#sentence:last").remove();
+        } 
+}})
+
+// END SNIPPET
+// https://jqueryhouse.com/jquery-on-method-the-issue-of-dynamically-added-elements/
+
 
 $(document).ready(function() {
   $(".word").on("click",function() {
