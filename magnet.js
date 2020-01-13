@@ -254,6 +254,7 @@ $(document).ready(function() {
         if($("#allWords").find(".clicked").length > 0){
           $(this).addClass("greyOut");
           $(this).removeClass("clicked");
+          $(this).unbind("click");
           selectedElements.push(this);
         }
         // console.log(this.id, thisWord)
