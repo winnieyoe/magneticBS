@@ -693,4 +693,8 @@ a:hover {
     padding-bottom: 40%;
     /* overflow: auto; */
   }
+
+  #result{
+    line-height: 1.5;
+  }
 }
