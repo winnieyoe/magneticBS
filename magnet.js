@@ -171,23 +171,6 @@ function shuffle(words) {
   }
   return words;
 };
-// let shuffle = function(words) {
-//   let currentIndex = words.length;
-//   let temporaryValue, randomIndex;
-//
-//   // While there remain elements to shuffle...
-//   while (0 !== currentIndex) {
-//     // Pick a remaining element...
-//     randomIndex = Math.floor(Math.random() * currentIndex);
-//     currentIndex -= 1;
-//
-//     // And swap it with the current element.
-//     temporaryValue = words[currentIndex];
-//     words[currentIndex] = words[randomIndex];
-//     words[randomIndex] = temporaryValue;
-//   }
-//   return words;
-// };
 
 //MAKE SENTENCE
 let popo = ["Hong", "Kong", "Police"]
@@ -216,7 +199,6 @@ function rotate() {
 let selectedWords = [];
 let selectedElements = [];
 
-
 function findElementWithId(id){
   for (let i=0; i<selectedElements.length; i++){
     console.log(selectedElements[i].id);
@@ -226,19 +208,19 @@ function findElementWithId(id){
   }
 }
 
-
 // THIS WILL ALLOW YOU TO CLICK ON
 // DYNAMICALLY CREATED HTML ELEMENTS O
 // IN #SENTENCE !!!
 $('div#sentence').on("click", "span", function(){
   // console.log(selectedElements);
-  console.log("blugh")
+  // console.log("blugh")
       if ($(this).hasClass("clicked") == true) {
-        console.log("yes");
+        // console.log("yes");
         $(this).remove();
         let toRevertElement = findElementWithId(this.id);
         $(toRevertElement[0]).removeClass("greyOut");
-        $(toRevertElement[0]).bind("click", function() {
+
+        $(toRevertElement[0]).bind("click", function(){
           if ($(this).hasClass("clicked") === false) {
             $(this).addClass("clicked");
             thisWord = $(this).text();
@@ -253,27 +235,24 @@ $('div#sentence').on("click", "span", function(){
           }
         });
         selectedElements.remove(toRevertElement[1]);
-        // if($("#sentence").find(".clicked").length > 0){
-        //   // $("#sentence:last").remove();
-        //   $(this).remove();
-        // }
 }});
 
 $(document).ready(function() {
-  $(".word").on("click", function() {
-      if ($(this).hasClass("clicked") === false) {
-        $(this).addClass("clicked");
-        thisWord = $(this).text();
-        $(this).clone().appendTo("#sentence");
+  $(".word").on("click", function(){
+    console.log(this.id)
+    if ($(this).hasClass("clicked") === false) {
+      $(this).addClass("clicked");
+      thisWord = $(this).text();
+      $(this).clone().appendTo("#sentence");
 
-        if($("#allWords").find(".clicked").length > 0){
-          $(this).addClass("greyOut");
-          $(this).removeClass("clicked");
-          $(this).unbind("click");
-          selectedElements.push(this);
-        }
+      if($("#allWords").find(".clicked").length > 0){
+        $(this).addClass("greyOut");
+        $(this).removeClass("clicked");
+        $(this).unbind("click");
+        selectedElements.push(this);
       }
-      })
+    }
+  })
 });
 
   // $(".word").click(
@@ -355,7 +334,6 @@ backDiv.addEventListener("click", function() {
 })
 
 
-
 //VISUALIZE RESULTS
 function gotData(data) {
   let answers = data.val();
@@ -369,8 +347,6 @@ function gotData(data) {
     for (let j = 0; j < words[i].length; j++) {
       // console.log(words[i][j], [i])
     }
-    // console.log(words[i], words[i].length)
-    // console.log("Hong Kong Police " + words[i].join(" "))
   }
 }
 
